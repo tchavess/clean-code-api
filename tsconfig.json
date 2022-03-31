@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist", // onde sera feita o sey de TS para JS
+        "module": "commonjs",
+        "target": "es2019",
+        "esModuleInterop": true,
+        "allowJs": true,
+        
+    }
+}
