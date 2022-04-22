@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/quotes
-import { HttpResponse } from "../protocols/http"
-import { ServerError } from "../errors/server-error"
+import { HttpResponse } from "../protocols"
+import { ServerError } from "../errors"
 
 export const badRequest = (error: Error): HttpResponse => ({
   statusCode: 400,
