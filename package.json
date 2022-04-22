@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests --runInBand --no-cache",
-    "test:staged": "npm test -- --findRelatedTests",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
+    "test:staged": "npm test --",
     "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.0.3",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
