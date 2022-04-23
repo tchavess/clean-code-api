@@ -210,7 +210,6 @@ describe('SignUp Controller', () => {
       }
     }
     const httpResponse = await sut.handle(httpRequest)
-    console.log(httpResponse.body)
     expect(httpResponse?.statusCode).toBe(200)
     expect(httpResponse?.body).toEqual({
       id: 'valid_id',
