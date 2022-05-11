@@ -47,7 +47,8 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "mongodb": "^4.5.0",
+    "dotenv": "^16.0.1",
+    "mongodb": "^3.6.9",
     "npm-check": "^5.9.2",
     "ts-node": "^10.7.0",
     "validator": "^13.7.0"
