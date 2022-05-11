@@ -1,19 +1,16 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { MongoClient, Collection } from 'mongodb'
-
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  server: {
-    poolSize: Number(process.env.POOL_SIZE)
-  }
-}
+const dotenv = require('dotenv').config()
 
 export const MongoHelper = {
   client: null as unknown as MongoClient,
 
   async connect (uri: string): Promise<void> {
-    this.client = await MongoClient.connect(process.env.MONGO_URL!, this.options)
+    this.client = await MongoClient.connect(process.env.MONGO_URL!, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
   },
 
   async disconnect (): Promise<void> {

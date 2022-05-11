@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { MongoHelper } from '../helpers/mongo-helpers'
 import { AccountMongoRepository } from './account'
-const DB = process.env.MONGO_URL!
-describe('Account Mongo Respository', () => {
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+
+describe('Account Mongo Repository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(DB)
+    await MongoHelper.connect(process.env.MONGO_URL!)
   })
 
   afterAll(async () => {
