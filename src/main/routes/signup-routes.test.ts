@@ -2,10 +2,10 @@ import request from "supertest"
 import app from "../config/app"
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helpers'
-
+import env from '../config/env'
 describe('SignUp Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL!)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {

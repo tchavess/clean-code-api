@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { MongoHelper } from '../helpers/mongo-helpers'
 import { AccountMongoRepository } from './account'
+import env from '../../../../main/config/env'
 
 describe('Account Mongo Repository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL!)
+    await MongoHelper.connect(env.mongoUrl)
   })
 
   afterAll(async () => {
