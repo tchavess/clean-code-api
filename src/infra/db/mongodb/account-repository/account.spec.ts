@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { MongoHelper } from '../helpers/mongo-helpers'
 import { AccountMongoRepository } from './account'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 
 describe('Account Mongo Repository', () => {
   beforeAll(async () => {
