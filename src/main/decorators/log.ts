@@ -4,19 +4,19 @@ import { Controller, HttpResponse, HttpRequest } from "../../presentation/protoc
 
 export class LogControllerDecorator implements Controller {
   private readonly controller: Controller
-  // private readonly logErrorRepository: LogErrorRepository
+  private readonly logErrorRepository: LogErrorRepository
 
-  constructor (controller: Controller/*, logErrorRepository: LogErrorRepository */) {
+  constructor (controller: Controller, logErrorRepository: LogErrorRepository) {
     this.controller = controller
-    // this.logErrorRepository = logErrorRepository
+    this.logErrorRepository = logErrorRepository
   }
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse | undefined> {
     const httpResponse = await this.controller.handle(httpRequest)
     if (httpResponse) {
-      // if (httpResponse?.statusCode === 500) {
-      //   await this.logErrorRepository.log(httpResponse.body.stack)
-      // }
+      if (httpResponse?.statusCode === 500) {
+        await this.logErrorRepository.log(httpResponse.body.stack)
+      }
       return httpResponse
     }
   }
