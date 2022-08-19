@@ -125,7 +125,6 @@ describe('SignUp Controller', () => {
       }
     }
     const httpResponse = await sut.handle(httpRequest)
-    console.log(httpResponse.body)
     expect(httpResponse?.statusCode).toBe(400)
     expect(httpResponse?.body).toEqual(new InvalidParamError('passwordConfirmation'))
   })
