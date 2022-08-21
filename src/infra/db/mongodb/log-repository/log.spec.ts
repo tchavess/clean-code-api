@@ -17,8 +17,12 @@ describe('Log Mongo Repository', () => {
     errorsCollection = await MongoHelper.getCollection('errors')
     await errorsCollection.deleteMany({})
   })
+
+  const makeSut = (): LogMongoRepository => {
+    return new LogMongoRepository()
+  }
   test('Should create an log error on success', async () => {
-    const sut = new LogMongoRepository()
+    const sut = makeSut()
     await sut.logError('any_error')
     const count = await errorsCollection.countDocuments()
     expect(count).toBe(1)
